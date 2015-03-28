@@ -1,4 +1,10 @@
 ###
+# Required Gems
+###
+require 'slim'
+require 'compass'
+
+###
 # Compass
 ###
 
@@ -36,9 +42,20 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  activate :livereload
+end
+
+# Set slim-lang output style
+# Slim::Engine.set_default_options :pretty => true
+
+# Set template languages
+set :slim, :layout_engine => :slim
+
+set :relative_links, true
+
+activate :bower
+sprockets.append_path File.join "#{root}", "vendor", "assets", "bower"
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -65,7 +82,7 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

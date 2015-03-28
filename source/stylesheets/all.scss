@@ -1,0 +1,157 @@
+@import 'variables';
+@import "compass";
+@import "compass/css3";
+@charset "utf-8";
+
+html {
+  height: 100%;
+}
+
+body {
+  background: darken($blue1001, 20%); // url("../images/background.png");
+  text-align: center;
+  font-family: sans-serif;
+  height: inherit;
+  width: inherit;
+
+  .background {
+    background: url(../images/ten_dollars_small.jpg) no-repeat center fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -12;
+    position: fixed;
+    @include opacity(0.1);
+    @include background-size(cover);
+    @include animation-name(bg-fade-out);
+    @include animation-duration(3s);
+    // @include animation-delay(1s);
+  }
+  .container {
+    height: inherit;
+    width: inherit;
+    @include display-flex(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+
+
+    h1 {
+      color: transparentize($orange1001, .3);
+      font-weight: bold;
+      font-size: 40px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 0 $orange1001;
+      margin: 0;
+      font-family: 'Oswald', "jaf-bernino-sans","Lucida Grande", "Lucida Sans Unicode","Lucida Sans", "Geneva","Verdana",sans-serif;
+    }
+  }
+}
+
+.greet {
+  @include opacity(.4);
+  @include transition-property(opacity);
+  @include transition-duration(.5s);
+
+  &:hover {
+    @include opacity(1);
+  }
+
+  p {
+    color: $white1001;
+  }
+}
+
+@include keyframes(bg-fade-out) {
+  from { @include opacity(1); }
+  33% { @include opacity(1); }
+  to { @include opacity(0.1); }
+}
+
+.menu-toggle-btn{
+  margin: 15px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  right: 0;
+
+  span{
+    background: $pink1001;
+    display: block;
+    width: 30px;
+    height: 1px;
+    // border-radius: 5px;
+    margin-bottom: 10px;
+    @include transition(all .4s ease-in-out);
+    // -webkit-transition: all 0.5s linear;
+    // transition: all 0.3s linear;
+  }
+  &.open{
+    span{
+      &:nth-child(1),
+      &:nth-child(3){
+        @include transform(translate(0px, 10px) rotate(-45deg) scalex(1.3));
+        margin: 0;
+      }
+      &:nth-child(2){
+        height: 0;
+        opacity: 0;
+        margin: 0;
+      }
+      &:nth-child(3){
+        @include transform(translate(0px, 9px) rotate(45deg) scalex(1.3));
+      }
+    }
+  }
+}
+
+// h1 {
+//   color: transparentize($pink1001, .3);
+//   font-weight: bold;
+//   font-size: 32px;
+//   letter-spacing: -1px;
+//   text-transform: uppercase;
+//   text-shadow: 0 1px 0 $pink1001;
+//   background: url("../images/middleman.png") no-repeat center 100px;
+//   padding: 350px 0 10px;
+//   margin: 0;
+//   font-family: 'Oswald', "jaf-bernino-sans","Lucida Grande", "Lucida Sans Unicode","Lucida Sans", "Geneva","Verdana",sans-serif;
+// }
+
+// .doc {
+//   font-size: 14px;
+//   margin: 0; }
+//   .doc:before,
+//   .doc:after {
+//     opacity: .2;
+//     padding: 6px;
+//     font-style: normal;
+//     position: relative;
+//     content: "•"; }
+//   .doc a {
+//     color: transparentize($orange1001, 0.3); }
+//     .doc a:hover {
+//       color: $orange1001; }
+
+// .welcome {
+//   -webkit-animation-name: welcome;
+//   -webkit-animation-duration: .9s; }
+
+// @-webkit-keyframes welcome {
+//   from {
+//     -webkit-transform: scale(0);
+//     opacity: 0;
+//   }
+//   50% {
+//    -webkit-transform: scale(0);
+//    opacity: 0;
+//   }
+//   82.5% {
+//     -webkit-transform: scale(1.03);
+//     -webkit-animation-timing-function: ease-out;
+//     opacity: 1;
+//   }
+//   to {
+//     -webkit-transform: scale(1);
+//   }
+// }
