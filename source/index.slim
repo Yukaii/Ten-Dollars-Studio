@@ -8,21 +8,46 @@ title: Ten Dollars
   span
 
 .navbar
-  =link_to 'About', '#'
-  =link_to 'Portfolio', '#'
-  =link_to 'Team', '#'
-  =link_to 'Blog', '#'
+  =link_to 'About', '#about'
+  =link_to 'Portfolio', '#portfolio'
+  =link_to 'Team', '#team'
+  =link_to 'Blog', '#recent-posts'
 
-.overview
+.overview#about
 .overview-container
   h1 Ten Dollars Studio
 
   .greet
-    p here we make changes, we make differences, we make peace, we make loves...
-    p here's a different way that we build our world
+    p
+      | here
+      br
+      | we make changes,
+      br
+      | we make differences,
+      br
+      | we make peace,
+      br
+      | we make loves...
+    p we build our own world in a different way
     p have fun!
 
-.portfolio
-.team
-.recent-posts
-.footer
+.portfolio#portfolio
+.team#team
+.recent-posts#recent-posts
+.footer#footer
+
+javascript:
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 750, $.bez([.55,0,.1,1]));
+          return false;
+        }
+      }
+    });
+  });

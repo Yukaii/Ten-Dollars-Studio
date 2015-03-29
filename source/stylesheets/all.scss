@@ -68,13 +68,17 @@ body {
     @include transition-property(opacity);
     @include transition-duration(.5s);
 
+    max-width: 600px;
+    text-align: left;
+    font-size: xx-large;
+
     &:hover {
       @include opacity(1);
     }
 
     p {
       color: $white1001;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Noto Sans', sans-serif;
     }
   }
 }
