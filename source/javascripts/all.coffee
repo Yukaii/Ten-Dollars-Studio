@@ -3,4 +3,5 @@
 $ ->
   $('.menu-toggle-btn').click ->
     $(this).toggleClass 'open'
+    $('.navbar').toggleClass 'open'
     return

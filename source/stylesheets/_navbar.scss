@@ -1,0 +1,28 @@
+.navbar {
+  position: fixed;
+  right: 71px;
+  margin-top: 12px;
+  font-family: 'Oswald', "jaf-bernino-sans","Lucida Grande", "Lucida Sans Unicode","Lucida Sans", "Geneva","Verdana",sans-serif;
+  text-transform: uppercase;
+
+  a {
+    color: $pink1001;
+    text-decoration: initial;
+    margin-left: 20px;
+    font-weight: 300;
+    font-size: 20px;
+    z-index: -10;
+    pointer-events: none;
+    @include opacity(0);
+    @include transition(all .4s cubic-bezier(.55,0,.1,1));
+  }
+
+  &.open {
+    a {
+      z-index: 1;
+      pointer-events: auto;
+      @include opacity(1);
+    }
+
+  }
+}
