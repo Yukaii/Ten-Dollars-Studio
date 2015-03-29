@@ -4,9 +4,10 @@
   margin-top: 12px;
   font-family: 'Oswald', "jaf-bernino-sans","Lucida Grande", "Lucida Sans Unicode","Lucida Sans", "Geneva","Verdana",sans-serif;
   text-transform: uppercase;
+  mix-blend-mode: exclusion;
 
   a {
-    color: $pink1001;
+    color: $reder;
     text-decoration: initial;
     margin-left: 20px;
     font-weight: 300;

@@ -1,0 +1,11 @@
+@include keyframes(bg-fade-out) {
+  from { @include opacity(1); }
+  33% { @include opacity(1); }
+  to { @include opacity(0.1); }
+}
+
+@include keyframes(bg-fade-in) {
+  from { @include opacity(0); }
+  33% { @include opacity(0); }
+  to { @include opacity(1); }
+}
