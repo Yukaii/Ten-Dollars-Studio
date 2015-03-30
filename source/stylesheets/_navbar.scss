@@ -5,6 +5,7 @@
   font-family: 'Oswald', "jaf-bernino-sans","Lucida Grande", "Lucida Sans Unicode","Lucida Sans", "Geneva","Verdana",sans-serif;
   text-transform: uppercase;
   mix-blend-mode: exclusion;
+  z-index: 10;
 
   a {
     color: $reder;
@@ -12,10 +13,13 @@
     margin-left: 20px;
     font-weight: 300;
     font-size: 20px;
-    z-index: -10;
     pointer-events: none;
     @include opacity(0);
     @include transition(all .4s cubic-bezier(.55,0,.1,1));
+
+    &:active, &:focus {
+      outline: none;
+    }
   }
 
   &.open {

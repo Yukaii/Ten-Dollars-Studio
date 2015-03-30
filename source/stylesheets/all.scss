@@ -43,15 +43,17 @@ body {
   font-size: 80px;
   font-family: $h1-typo;
   font-weight: 300;
-  letter-spacing: 10px;
+  letter-spacing: 3px;
   // text-transform: uppercase;
   text-shadow: 0 1px 0 $orange1001;
   margin: 0;
 }
 
 .overview-container {
-  height: inherit;
-  width: inherit;
+  // height: inherit;
+  // width: inherit;
+  @extend .fill-page;
+  height: 96%;
   @include display-flex(flex);
   @include align-items(center);
   @include justify-content(center);
@@ -68,9 +70,11 @@ body {
     @include transition-property(opacity);
     @include transition-duration(.5s);
 
-    max-width: 600px;
+    min-width: 300px;
+    max-width: 700px;
     text-align: left;
-    font-size: xx-large;
+    padding: 0 60px;
+    font-size: 33px;
 
     &:hover {
       @include opacity(1);
@@ -78,7 +82,7 @@ body {
 
     p {
       color: $white1001;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: 'Amatic SC', cursive;
     }
   }
 }
@@ -86,6 +90,72 @@ body {
 .portfolio {
   @extend .fill-page;
   background-color: $white1001;
+
+  .flex-container {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    padding: 20px;
+
+    h1 {
+      @extend .h1;
+      width: 100%;
+      color: $blue1001;
+      font-size: 50px;
+      @include text-shadow(1px 1px 1px $pink1001);
+    }
+
+    .image-container {
+      @include flex-grow(1);
+      position: relative;
+      background-repeat: no-repeat;
+      height: 250px;
+      width: 40%;
+      max-width: 500px;
+      overflow: hidden;
+      margin: 10px;
+
+      .feature-image {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include transition(.5s transform $material-cubic);
+      }
+
+    }
+    .hover {
+
+      &::after {
+        content: '';
+        background-color: $greener;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include opacity(.45);
+        @include transition(.5s transform $material-cubic);
+        @include transform(scale(2.3) translateX(-100%) translateY(-100%)  rotate(-45deg));
+      }
+
+      &:hover {
+        .feature-image {
+          // background-size: 125%;
+          @include transform(scale(1.2));
+        }
+
+        &::after {
+          @include transform(scale(2.3) rotate(-45deg) );
+          transition-duration: 1s;
+        }
+
+      }
+    }
+
+  }
 }
 
 .team {

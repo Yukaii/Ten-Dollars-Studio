@@ -18,20 +18,31 @@ title: Ten Dollars
   h1 Ten Dollars Studio
 
   .greet
-    p
-      | here
-      br
-      | we make changes,
-      br
-      | we make differences,
-      br
-      | we make peace,
-      br
-      | we make loves...
-    p we build our own world in a different way
-    p have fun!
+    p= lorem.sentences 5
+    /   | here
+    /   br
+    /   | we make changes,
+    /   br
+    /   | we make differences,
+    /   br
+    /   | we make peace,
+    /   br
+    /   | we make loves...
+    / p we build our own world in a different way
+    / p have fun!
 
 .portfolio#portfolio
+  .flex-container
+    h1 Portfolio
+    .hover.image-container
+      .feature-image style="background-image: url('../images/team-20.png');"
+    .hover.image-container
+      .feature-image style="background-image: url('../images/oceanic-next.png');"
+    .hover.image-container
+      .feature-image style="background-image: url('../images/yshin.png');"
+    .hover.image-container
+      .feature-image style="background-image: url('../images/jobs.png');"
+
 .team#team
 .recent-posts#recent-posts
 .footer#footer
@@ -44,7 +55,7 @@ javascript:
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop: target.offset().top
+            scrollTop: target.offset().top + 1
           }, 750, $.bez([.55,0,.1,1]));
           return false;
         }
