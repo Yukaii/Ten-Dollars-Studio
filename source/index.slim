@@ -13,8 +13,8 @@ title: Ten Dollars
   =link_to 'Team', '#team'
   =link_to 'Blog', '#recent-posts'
 
-.overview#about
-.overview-container
+.overview.fill-page#about
+.overview-container.fill-page
   h1 Ten Dollars Studio
 
   .greet
@@ -31,21 +31,23 @@ title: Ten Dollars
     / p we build our own world in a different way
     / p have fun!
 
-.portfolio#portfolio
+.portfolio.fill-page#portfolio
   .flex-container
     h1 Portfolio
-    .hover.image-container
-      .feature-image style="background-image: url('../images/team-20.png');"
-    .hover.image-container
-      .feature-image style="background-image: url('../images/oceanic-next.png');"
-    .hover.image-container
-      .feature-image style="background-image: url('../images/yshin.png');"
-    .hover.image-container
-      .feature-image style="background-image: url('../images/jobs.png');"
+    .flex-row
+      .image-container
+        .feature-image style="background-image: url('../images/team-20.png');"
+      .image-container
+        .feature-image style="background-image: url('../images/oceanic-next.png');"
+    .flex-row
+      .image-container
+        .feature-image style="background-image: url('../images/yshin.png');"
+      .image-container
+        .feature-image style="background-image: url('../images/jobs.png');"
 
-.team#team
-.recent-posts#recent-posts
-.footer#footer
+.team.fill-page#team
+.recent-posts.fill-page#recent-posts
+.footer.fill-page#footer
 
 javascript:
   $(function() {
@@ -55,7 +57,7 @@ javascript:
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop: target.offset().top + 1
+            scrollTop: target.offset().top
           }, 750, $.bez([.55,0,.1,1]));
           return false;
         }
