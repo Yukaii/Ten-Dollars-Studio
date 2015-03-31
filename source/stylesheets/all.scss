@@ -80,13 +80,15 @@ body {
     padding: 0 60px;
     font-size: 33px;
 
-    &:hover {
-      @include opacity(1);
-    }
-
     p {
       color: $white1001;
       font-family: 'Amatic SC', cursive;
+    }
+  }
+
+  &:hover {
+    .greet {
+      @include opacity(1);
     }
   }
 }
@@ -124,6 +126,26 @@ body {
   max-width: 600px;
   min-height: 320px;
 
+  &.gold {
+    &::after {
+      background-color: gold;
+      @include opacity(.95);
+    }
+  }
+
+  &.red {
+    &::after {
+      background-color: $pink1001;
+      @include opacity(.9);
+    }
+  }
+
+  &.blue {
+    &::after {
+      background-color: $blue1001;
+      @include opacity(.9);
+    }
+  }
 
   .feature-image {
     width: 100%;
@@ -133,6 +155,23 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     @include transition(.6s transform $material-cubic);
+  }
+
+  .content {
+    padding-top: 15%;
+    z-index: 1;
+    position: inherit;
+    font-size: 30px;
+    color: $white1001;
+    @include text-shadow(1px 1px 1px black);
+    @include transform(translateY(-100%));
+    @include opacity(0);
+    @include transition(.6s all $material-cubic);
+
+    h3 {
+      font-family: $h1-typo;
+      font-style: bold;
+    }
   }
 
   // hover slide in effect
@@ -159,6 +198,11 @@ body {
     &::after {
       @include transform(scale(2.3) rotate(-45deg) );
       transition-duration: 1s;
+    }
+
+    .content {
+      @include opacity(1);
+      @include transform(translateY(0));
     }
   }
   // -----------------------
@@ -204,23 +248,40 @@ body {
   }
 
   .profile-container {
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
-    margin: 10px 0 10px 0;
-    height: 250px;
+    width: 270px;
+    min-width: 270px;
+    max-width: 270px;
+    height: 270px;
+    margin: 15px;
+    padding: 6px;
     background-repeat: no-repeat;
     overflow: hidden;
     position: relative;
+    z-index: 1;
+    @include box-sizing(border-box);
     @include border-radius(50%);
 
     .head-image {
       width: 100%;
       height: 100%;
-      position: absolute;
+      // position: absolute;
+      margin: auto;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      z-index: 1;
+      @include border-radius(50%);
+    }
+
+    .head-border {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $orange1001;
+      margin: auto;
+      z-index: -1;
       @include border-radius(50%);
     }
 
