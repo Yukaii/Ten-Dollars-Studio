@@ -31,23 +31,42 @@ title: Ten Dollars
     / p we build our own world in a different way
     / p have fun!
 
-.portfolio.fill-page#portfolio
+.portfolio.wrap-content#portfolio
   .flex-container
     h1 Portfolio
     .flex-row
       .image-container
         .feature-image style="background-image: url('../images/team-20.png');"
+        .content
+          h3 Ten Dollars
       .image-container
         .feature-image style="background-image: url('../images/oceanic-next.png');"
+        .content
+          h3 Oceanic Next
     .flex-row
       .image-container
-        .feature-image style="background-image: url('../images/yshin.png');"
+        .feature-image style="background-image: url('../images/team-20.png');"
+        .content
       .image-container
         .feature-image style="background-image: url('../images/jobs.png');"
+        .content
 
-.team.fill-page#team
+.team.wrap-content#team
+  .flex-container
+    h1 Team
+    .team-flex-flow
+      .profile-container
+        .head-image style="background-image: url('../images/yukai.jpg');"
+
+      .profile-container
+        .head-image style="background-image: url('../images/neson.jpg');"
+      .profile-container
+        .head-image style="background-image: url('../images/lucas.jpg');"
+      .profile-container
+        .head-image style="background-image: url('../images/cyuan.jpg');"
+
 .recent-posts.fill-page#recent-posts
-.footer.fill-page#footer
+.footer#footer
 
 javascript:
   $(function() {
@@ -57,7 +76,7 @@ javascript:
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop: target.offset().top
+            scrollTop: target.offset().top + 1
           }, 750, $.bez([.55,0,.1,1]));
           return false;
         }
