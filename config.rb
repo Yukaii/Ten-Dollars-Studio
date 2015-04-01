@@ -43,7 +43,7 @@ require 'compass'
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  activate :livereload, port: 35728
 end
 
 set :relative_links, true

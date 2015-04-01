@@ -2,3 +2,7 @@
   clip-path: $clip;
   -webkit-clip-path: $clip;
 }
+
+@mixin material-animate($time) {
+  @include transition(all $time cubic-bezier(.55,0,.1,1));
+}
