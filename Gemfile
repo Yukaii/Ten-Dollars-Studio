@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem "middleman", "~>3.3.10"
 
 # Live-reloading plugin
+gem 'middleman-bower'
+
+gem 'middleman-deploy', '~> 1.0'
 gem "middleman-livereload", "~> 3.1.0"
 
 # For faster file watcher updates on Windows:
@@ -15,4 +18,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'slim'
 
-gem 'middleman-bower'
+gem 'dotenv'

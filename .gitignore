@@ -19,3 +19,6 @@
 
 # Ignore bower files
 /vendor
+
+# Ignore Env variables
+.env
