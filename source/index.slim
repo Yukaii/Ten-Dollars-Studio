@@ -10,7 +10,7 @@ title: Ten Dollars
 .navbar
   =link_to 'About', '#about'
   =link_to 'Portfolio', '#portfolio'
-  =link_to 'Team', '#team'
+  =link_to 'Members', '#members'
   =link_to 'Blog', '#recent-posts'
 
 .overview.fill-page#about
@@ -35,40 +35,40 @@ title: Ten Dollars
   .flex-container
     h1 Portfolio
     .flex-row
-      a.image-container.gold[href="http://ntust.github.io/Team-20"]
+      a.image-container.blue[href="http://apple.com" target="_blank"]
+        .feature-image style="background-image: url('../images/jobs.png');"
+        .content
+          h3 Steve Jobs
+      a.image-container.gold[href="http://ntust.github.io/Team-20" target="_blank"]
         .feature-image style="background-image: url('../images/team-20.png');"
         .content
           h3 Ten Dollars
-      a.image-container[href="https://github.com/yukaii/Oceanic-Seti-ST3"]
+    .flex-row
+      a.image-container[href="https://github.com/yukaii/Oceanic-Seti-ST3" target="_blank"]
         .feature-image style="background-image: url('../images/oceanic-next.png');"
         .content
           h3 Oceanic Next
-    .flex-row
       a.image-container.red
         .feature-image style="background-image: url('../images/yshin.png');"
         .content
           h3 Yishin Chou
-      a.image-container.blue[href="http://apple.com"]
-        .feature-image style="background-image: url('../images/jobs.png');"
-        .content
-          h3 Steve Jobs
 
-.team.wrap-content#team
+.members.wrap-content#members
   .flex-container
-    h1 Team
-    .team-flex-flow
+    h1 Members
+    .members-flex-flow
       .profile-container
         .head-image style="background-image: url('../images/yukai.jpg');"
         .head-border
         .content-bg
           h3.name Yukai
-          .title Eater
+          .title Coder
       .profile-container
         .head-image style="background-image: url('../images/neson.jpg');"
         .head-border
         .content-bg
           h3.name Neson
-          .title Programmer
+          .title Developer
       .profile-container
         .head-image style="background-image: url('../images/lucas.jpg');"
         .head-border
@@ -76,11 +76,11 @@ title: Ten Dollars
           h3.name Lucas
           .title Designer
       .profile-container
-        .head-image style="background-image: url('../images/cyuan.jpg');"
+        .head-image style="background-image: url('../images/manta.jpg');"
         .head-border
         .content-bg
-          h3.name Peter
-          .title Musician
+          h3.name Manta
+          .title E*ter
 
 .recent-posts.fill-page#recent-posts
 .footer#footer

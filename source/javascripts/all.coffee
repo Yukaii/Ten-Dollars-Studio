@@ -6,3 +6,8 @@ $ ->
     $(this).toggleClass 'open'
     $('.navbar').toggleClass 'open'
     return
+
+  $('.head-border').click ->
+    $(this).parent().children('.content-bg').toggleClass 'open'
+    $(this).parent().children('.head-image').toggleClass 'open'
+    return
